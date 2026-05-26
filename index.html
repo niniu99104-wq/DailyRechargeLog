@@ -480,7 +480,7 @@
     // ══════════════════════════════════════════
     //  ⚙️ 設定
     // ══════════════════════════════════════════
-    const GAS_URL    = 'https://script.google.com/macros/s/AKfycbz9gc7FFyBNcra-18wLlwP2geaIn4adUMmSpEteI_8yHZXC5sSAY6NfPtAvGq_1QmtP/exec';
+    const GAS_URL    = 'https://script.google.com/macros/s/AKfycbztL38nAvFCTinJTEA453882qaZYLEtI-mKtHf6O4noyRAYsjzV-pxE-m34ZE2rjIPX/exec';
     const WATER_GOAL = 2000;
     const LS_KEY     = 'energy_diary_v1';
 
@@ -618,6 +618,46 @@
     // ══════════════════════════════════════════
     //  📡 送出（修正版）
     // ══════════════════════════════════════════
+  async function submitForm() {
+  const btn      = document.getElementById('submitBtn');
+  const btnText  = document.getElementById('btnText');
+  const errorBox = document.getElementById('errorBox');
+
+  errorBox.style.display = 'none';
+  btn.disabled = true;
+  btnText.innerHTML = '<div class="spinner"></div> 正在傳送...';
+
+  const payload = buildFormData();
+
+  try {
+    // ★ 改用 GET，資料放 URL 參數，完全避開 POST 重定向問題
+    const url = GAS_URL + '?data=' + encodeURIComponent(JSON.stringify(payload));
+
+    const res = await fetch(url, { method: 'GET' });
+
+    if (!res.ok) throw new Error(`伺服器回應 HTTP ${res.status}`);
+
+    let json;
+    try {
+      json = await res.json();
+    } catch (_) {
+      throw new Error('GAS 回傳格式非 JSON，請確認部署設定或等 1 分鐘後重試');
+    }
+
+    if (json.status === 'success') {
+      showFeedback(json.feedback);
+    } else {
+      throw new Error(json.message || '後端回傳未知錯誤');
+    }
+
+  } catch (err) {
+    document.getElementById('errorMsg').textContent = err.message;
+    errorBox.style.display = 'block';
+    errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    btn.disabled = false;
+    btnText.textContent = '↩ 重新送出';
+  }
+}
     async function submitForm() {
       const btn      = document.getElementById('submitBtn');
       const btnText  = document.getElementById('btnText');
