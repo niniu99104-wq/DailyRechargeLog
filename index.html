@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet" />
-
   <style>
     :root {
       --bg:        #f5f2ec;
@@ -27,89 +26,40 @@
       --font-body: 'Noto Sans TC', sans-serif;
       --font-disp: 'Playfair Display', serif;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--font-body);
-      background: var(--bg);
-      color: var(--text-body);
-      min-height: 100dvh;
-      padding-bottom: 40px;
-    }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--text-body); min-height: 100dvh; padding-bottom: 48px; }
 
     /* ── 頁首 ── */
-    .site-header {
-      background: var(--bg-card);
-      border-bottom: 1px solid var(--border);
-      padding: 20px 20px 16px;
-      position: sticky; top: 0; z-index: 100;
-      display: flex; align-items: center; gap: 12px;
-    }
-    .header-logo {
-      width: 40px; height: 40px;
-      background: linear-gradient(135deg, var(--accent), #e0a882);
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px; flex-shrink: 0;
-    }
-    .header-text h1 {
-      font-family: var(--font-disp); font-size: 18px;
-      color: var(--text-h); line-height: 1.2;
-    }
-    .header-text p {
-      font-size: 11px; color: var(--text-mute);
-      margin-top: 2px; letter-spacing: 0.3px;
-    }
+    .site-header { background: var(--bg-card); border-bottom: 1px solid var(--border); padding: 18px 20px 14px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 12px; }
+    .header-logo { width: 40px; height: 40px; background: linear-gradient(135deg, var(--accent), #e0a882); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .header-text h1 { font-family: var(--font-disp); font-size: 18px; color: var(--text-h); line-height: 1.2; }
+    .header-text p  { font-size: 11px; color: var(--text-mute); margin-top: 2px; }
 
     /* ── 容器 ── */
-    .main-container {
-      max-width: 520px; margin: 0 auto;
-      padding: 20px 16px 0;
-      display: flex; flex-direction: column; gap: 16px;
-    }
+    .main-container { max-width: 520px; margin: 0 auto; padding: 20px 16px 0; display: flex; flex-direction: column; gap: 16px; }
 
     /* ── 卡片 ── */
-    .card {
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      padding: 20px;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-    }
-    .card-header {
-      display: flex; align-items: center; gap: 10px; margin-bottom: 18px;
-    }
-    .card-icon {
-      width: 34px; height: 34px; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 17px; flex-shrink: 0;
-    }
+    .card { background: var(--bg-card); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); border: 1px solid var(--border); }
+    .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+    .card-icon { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
     .card-icon.warm   { background: #fdeee2; }
     .card-icon.green  { background: #e4f5ec; }
     .card-icon.blue   { background: #e2edf5; }
     .card-icon.purple { background: #ece4f5; }
     .card-icon.rose   { background: #f5e4ec; }
-    .card-title   { font-weight: 700; font-size: 15px; color: var(--text-h); }
-    .card-subtitle{ font-size: 11px; color: var(--text-mute); margin-top: 1px; }
+    .card-title    { font-weight: 700; font-size: 15px; color: var(--text-h); }
+    .card-subtitle { font-size: 11px; color: var(--text-mute); margin-top: 1px; }
 
     /* ── 表單 ── */
-    label.field-label {
-      display: block; font-size: 12px; font-weight: 500;
-      color: var(--text-mute); margin-bottom: 6px; letter-spacing: 0.3px;
-    }
-    input[type="text"], input[type="number"],
-    input[type="date"], input[type="time"] {
-      width: 100%; background: var(--bg-input);
-      border: 1.5px solid transparent; border-radius: var(--radius-sm);
-      padding: 13px 14px; font-family: var(--font-body);
-      font-size: 15px; color: var(--text-h); outline: none;
-      transition: border-color .2s, background .2s;
-      -webkit-appearance: none; appearance: none;
+    label.field-label { display: block; font-size: 12px; font-weight: 500; color: var(--text-mute); margin-bottom: 6px; letter-spacing: 0.3px; }
+    input[type="text"], input[type="number"], input[type="date"], input[type="time"] {
+      width: 100%; background: var(--bg-input); border: 1.5px solid transparent; border-radius: var(--radius-sm);
+      padding: 13px 14px; font-family: var(--font-body); font-size: 15px; color: var(--text-h); outline: none;
+      transition: border-color .2s, background .2s; -webkit-appearance: none; appearance: none;
     }
     input:focus { border-color: var(--accent); background: #fff; }
     input::placeholder { color: var(--text-mute); font-size: 14px; }
-
     .field-row { display: flex; gap: 10px; }
     .field-row > .field-group { flex: 1; }
     .field-group { margin-bottom: 14px; }
@@ -117,63 +67,30 @@
     .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
 
     /* ── 用餐列 ── */
-    .meal-row {
-      display: grid; grid-template-columns: 90px 1fr;
-      gap: 10px; align-items: start; margin-bottom: 12px;
-    }
+    .meal-row { display: grid; grid-template-columns: 86px 1fr; gap: 10px; align-items: start; margin-bottom: 12px; }
     .meal-row:last-child { margin-bottom: 0; }
-    .meal-label { display: flex; align-items: center; gap: 6px; padding-top: 13px; }
-    .meal-label .meal-emoji { font-size: 18px; }
-    .meal-label .meal-name { font-size: 13px; font-weight: 500; color: var(--text-h); }
-    .meal-label .optional-tag {
-      font-size: 10px; color: var(--text-mute);
-      background: var(--bg-input); padding: 1px 5px;
-      border-radius: 4px; display: block; margin-top: 2px;
-    }
+    .meal-label { display: flex; align-items: center; gap: 5px; padding-top: 13px; }
+    .meal-label .meal-emoji { font-size: 17px; }
+    .meal-label .meal-name  { font-size: 13px; font-weight: 500; color: var(--text-h); }
+    .meal-label .optional-tag { font-size: 10px; color: var(--text-mute); background: var(--bg-input); padding: 1px 5px; border-radius: 4px; display: block; margin-top: 2px; }
     .meal-inputs { display: flex; flex-direction: column; gap: 6px; }
     .meal-inputs input[type="time"] { font-size: 14px; padding: 10px 12px; }
 
     /* ── 水量 ── */
-    .water-display { text-align: center; padding: 10px 0 18px; }
-    .water-number {
-      font-family: var(--font-disp); font-size: 62px;
-      font-weight: 600; color: var(--accent);
-      line-height: 1; letter-spacing: -1px;
-    }
+    .water-display { text-align: center; padding: 8px 0 16px; }
+    .water-number { font-family: var(--font-disp); font-size: 62px; font-weight: 600; color: var(--accent); line-height: 1; letter-spacing: -1px; }
     .water-unit { font-size: 16px; color: var(--text-mute); margin-left: 4px; }
-    .water-bar-bg {
-      height: 6px; background: var(--bg-input);
-      border-radius: 99px; margin: 10px 0 4px; overflow: hidden;
-    }
-    .water-bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #7ec8e3, #c8956c);
-      border-radius: 99px;
-      transition: width .5s cubic-bezier(.34,1.56,.64,1);
-    }
+    .water-bar-bg { height: 6px; background: var(--bg-input); border-radius: 99px; margin: 10px 0 4px; overflow: hidden; }
+    .water-bar-fill { height: 100%; background: linear-gradient(90deg, #7ec8e3, #c8956c); border-radius: 99px; transition: width .5s cubic-bezier(.34,1.56,.64,1); }
     .water-goal-text { font-size: 11px; color: var(--text-mute); text-align: right; }
-    .water-btns {
-      display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 8px; margin-top: 14px;
-    }
-    .btn-water {
-      background: var(--accent-lt); color: var(--accent-dk);
-      border: none; border-radius: var(--radius-sm);
-      padding: 14px 4px; font-family: var(--font-body);
-      font-size: 14px; font-weight: 700; cursor: pointer;
-      transition: all .15s ease; -webkit-tap-highlight-color: transparent;
-    }
+    .water-btns { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px; margin-top: 14px; }
+    .btn-water { background: var(--accent-lt); color: var(--accent-dk); border: none; border-radius: var(--radius-sm); padding: 14px 4px; font-family: var(--font-body); font-size: 14px; font-weight: 700; cursor: pointer; -webkit-tap-highlight-color: transparent; }
     .btn-water:active { transform: scale(.95); }
     .btn-water.reset { background: var(--bg-input); color: var(--text-mute); font-weight: 500; }
 
     /* ── 情緒 ── */
     .mood-btns { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-top: 14px; }
-    .btn-mood {
-      background: var(--bg-input); border: 2px solid transparent;
-      border-radius: var(--radius-sm); padding: 14px 4px; cursor: pointer;
-      display: flex; flex-direction: column; align-items: center; gap: 4px;
-      transition: all .2s ease; -webkit-tap-highlight-color: transparent;
-    }
+    .btn-mood { background: var(--bg-input); border: 2px solid transparent; border-radius: var(--radius-sm); padding: 14px 4px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all .2s ease; -webkit-tap-highlight-color: transparent; }
     .btn-mood .emoji { font-size: 26px; }
     .btn-mood .mood-label { font-size: 11px; color: var(--text-mute); }
     .btn-mood.active { background: var(--accent-lt); border-color: var(--accent); }
@@ -181,118 +98,41 @@
     .btn-mood:active { transform: scale(.93); }
 
     /* ── 送出按鈕 ── */
-    .submit-btn {
-      width: 100%;
-      background: linear-gradient(135deg, var(--accent), #e0a882);
-      color: #fff; border: none; border-radius: var(--radius);
-      padding: 18px; font-family: var(--font-body);
-      font-size: 16px; font-weight: 700; letter-spacing: .5px;
-      cursor: pointer; box-shadow: 0 4px 20px rgba(200,149,108,.35);
-      transition: all .2s ease; -webkit-tap-highlight-color: transparent;
-      margin-top: 4px;
-    }
-    .submit-btn:active { transform: translateY(1px); box-shadow: 0 2px 10px rgba(200,149,108,.25); }
+    .submit-btn { width: 100%; background: linear-gradient(135deg, var(--accent), #e0a882); color: #fff; border: none; border-radius: var(--radius); padding: 18px; font-family: var(--font-body); font-size: 16px; font-weight: 700; letter-spacing: .5px; cursor: pointer; box-shadow: 0 4px 20px rgba(200,149,108,.35); transition: all .2s ease; -webkit-tap-highlight-color: transparent; margin-top: 4px; }
+    .submit-btn:active { transform: translateY(1px); }
     .submit-btn:disabled { opacity: .7; cursor: not-allowed; transform: none; }
     .submit-btn .btn-content { display: flex; align-items: center; justify-content: center; gap: 8px; }
 
-    /* ── 錯誤框（新增）── */
-    .error-box {
-      display: none;
-      background: #fff5f5;
-      border: 1.5px solid #f5c0c0;
-      border-radius: var(--radius-sm);
-      padding: 16px 18px;
-      font-size: 13.5px;
-      color: #b04040;
-      line-height: 1.8;
-    }
-    .error-box strong { display: block; margin-bottom: 4px; font-size: 14px; }
-    .error-box .error-detail { color: var(--text-body); font-size: 13px; margin-top: 6px; }
-    .error-box .error-tips {
-      color: var(--text-mute); font-size: 12px;
-      margin-top: 10px; padding-top: 10px;
-      border-top: 1px solid var(--border); line-height: 1.9;
-    }
-
     /* ── Spinner ── */
-    .spinner {
-      width: 18px; height: 18px;
-      border: 2.5px solid rgba(255,255,255,.4);
-      border-top-color: #fff; border-radius: 50%;
-      animation: spin .8s linear infinite;
-    }
+    .spinner { width: 18px; height: 18px; border: 2.5px solid rgba(255,255,255,.4); border-top-color: #fff; border-radius: 50%; animation: spin .8s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* ── AI 回饋 ── */
-    #feedback-section {
-      display: none; max-width: 520px;
-      margin: 0 auto; padding: 20px 16px 40px;
-    }
-    .feedback-card {
-      background: linear-gradient(145deg,#fffdf9,#fdf5ec);
-      border-radius: var(--radius); padding: 28px 24px;
-      box-shadow: var(--shadow-lg); border: 1px solid var(--border);
-      position: relative; overflow: hidden;
-    }
-    .feedback-card::before {
-      content: ''; position: absolute;
-      top: -30px; right: -30px; width: 120px; height: 120px;
-      background: radial-gradient(circle,rgba(200,149,108,.12) 0%,transparent 70%);
-      border-radius: 50%;
-    }
-    .feedback-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: var(--accent-lt); color: var(--accent-dk);
-      font-size: 11px; font-weight: 700;
-      padding: 5px 12px; border-radius: 99px;
-      letter-spacing: .5px; margin-bottom: 16px;
-    }
-    .feedback-title {
-      font-family: var(--font-disp); font-size: 22px;
-      color: var(--text-h); margin-bottom: 18px; font-style: italic;
-    }
-    .feedback-body {
-      font-size: 14.5px; line-height: 1.9;
-      color: var(--text-body); white-space: pre-line;
-    }
-    .feedback-divider { height: 1px; background: var(--border); margin: 20px 0; }
-    .new-day-btn {
-      width: 100%; background: var(--bg-card);
-      color: var(--accent-dk); border: 1.5px solid var(--accent);
-      border-radius: var(--radius); padding: 16px;
-      font-family: var(--font-body); font-size: 15px; font-weight: 700;
-      cursor: pointer; margin-top: 16px; transition: all .2s ease;
-    }
+    /* ── 成功卡片 ── */
+    #success-section { display: none; max-width: 520px; margin: 0 auto; padding: 20px 16px 40px; }
+    .success-card { background: linear-gradient(145deg, #fffdf9, #f0faf4); border-radius: var(--radius); padding: 36px 24px; box-shadow: var(--shadow-lg); border: 1px solid var(--border); text-align: center; }
+    .success-icon { font-size: 52px; margin-bottom: 16px; display: block; animation: pop .4s cubic-bezier(.34,1.56,.64,1); }
+    @keyframes pop { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .success-title { font-family: var(--font-disp); font-size: 22px; color: var(--text-h); margin-bottom: 8px; font-style: italic; }
+    .success-sub { font-size: 13.5px; color: var(--text-mute); line-height: 1.7; }
+    .success-divider { height: 1px; background: var(--border); margin: 22px 0; }
+    .new-day-btn { width: 100%; background: var(--bg-card); color: var(--accent-dk); border: 1.5px solid var(--accent); border-radius: var(--radius); padding: 16px; font-family: var(--font-body); font-size: 15px; font-weight: 700; cursor: pointer; transition: all .2s ease; }
     .new-day-btn:active { background: var(--accent-lt); }
 
+    /* ── 錯誤框 ── */
+    .error-box { display: none; background: #fff5f5; border: 1.5px solid #f5c0c0; border-radius: var(--radius-sm); padding: 14px 16px; font-size: 13px; color: #b04040; line-height: 1.8; margin-top: 8px; }
+
     /* ── Toast ── */
-    .toast {
-      position: fixed; bottom: 30px; left: 50%;
-      transform: translateX(-50%) translateY(20px);
-      background: var(--text-h); color: #fff;
-      padding: 12px 22px; border-radius: 99px;
-      font-size: 13px; opacity: 0; pointer-events: none;
-      transition: all .3s ease; z-index: 9999; white-space: nowrap;
-    }
+    .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--text-h); color: #fff; padding: 12px 22px; border-radius: 99px; font-size: 13px; opacity: 0; pointer-events: none; transition: all .3s ease; z-index: 9999; white-space: nowrap; }
     .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-    /* ── 底部小字 ── */
-    .footer-note {
-      text-align: center; font-size: 11px;
-      color: var(--text-mute); margin-top: 12px; padding: 0 16px;
-    }
+    .footer-note { text-align: center; font-size: 11px; color: var(--text-mute); margin-top: 10px; padding: 0 16px; }
 
-    /* ── 自動儲存點 ── */
-    .autosave-dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: #b8e4c2; display: inline-block; margin-left: 6px;
-      transition: background .5s;
-    }
+    .autosave-dot { width: 7px; height: 7px; border-radius: 50%; background: #b8e4c2; display: inline-block; margin-left: 6px; transition: background .5s; }
     .autosave-dot.saving { background: var(--accent); animation: pulse .8s ease infinite; }
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
 
     @media (max-width:360px) {
-      .water-number { font-size: 52px; }
+      .water-number { font-size: 50px; }
       .btn-water { font-size: 13px; }
       .three-col { grid-template-columns: 1fr 1fr; }
     }
@@ -320,25 +160,25 @@
         <div class="field-row">
           <div class="field-group">
             <label class="field-label" for="date">📅 日期</label>
-            <input type="date" id="date" name="date" />
+            <input type="date" id="date" />
           </div>
           <div class="field-group">
             <label class="field-label" for="wakeTime">⏰ 起床時間</label>
-            <input type="time" id="wakeTime" name="wakeTime" />
+            <input type="time" id="wakeTime" />
           </div>
         </div>
         <div class="three-col">
           <div class="field-group">
             <label class="field-label" for="weight">⚖️ 體重 kg</label>
-            <input type="number" id="weight" name="weight" step="0.1" placeholder="0.0" />
+            <input type="number" id="weight" step="0.1" placeholder="0.0" />
           </div>
           <div class="field-group">
             <label class="field-label" for="bodyFat">🔥 體脂 %</label>
-            <input type="number" id="bodyFat" name="bodyFat" step="0.1" placeholder="0.0" />
+            <input type="number" id="bodyFat" step="0.1" placeholder="0.0" />
           </div>
           <div class="field-group">
             <label class="field-label" for="visceralFat">🫀 內臟脂肪</label>
-            <input type="number" id="visceralFat" name="visceralFat" step="0.1" placeholder="0" />
+            <input type="number" id="visceralFat" step="0.1" placeholder="0" />
           </div>
         </div>
       </div>
@@ -351,38 +191,23 @@
         </div>
         <div class="meal-row">
           <div class="meal-label"><span class="meal-emoji">🌤️</span><span class="meal-name">早餐</span></div>
-          <div class="meal-inputs">
-            <input type="time" id="breakfastTime" name="breakfastTime" />
-            <input type="text" id="breakfastFood" name="breakfastFood" placeholder="吃了什麼？" />
-          </div>
+          <div class="meal-inputs"><input type="time" id="breakfastTime" /><input type="text" id="breakfastFood" placeholder="吃了什麼？" /></div>
         </div>
         <div class="meal-row">
           <div class="meal-label"><span class="meal-emoji">☀️</span><span class="meal-name">午餐</span></div>
-          <div class="meal-inputs">
-            <input type="time" id="lunchTime" name="lunchTime" />
-            <input type="text" id="lunchFood" name="lunchFood" placeholder="吃了什麼？" />
-          </div>
+          <div class="meal-inputs"><input type="time" id="lunchTime" /><input type="text" id="lunchFood" placeholder="吃了什麼？" /></div>
         </div>
         <div class="meal-row">
           <div class="meal-label"><span class="meal-emoji">☕</span><div><span class="meal-name">下午茶</span><span class="optional-tag">選填</span></div></div>
-          <div class="meal-inputs">
-            <input type="time" id="teaTime" name="teaTime" />
-            <input type="text" id="teaFood" name="teaFood" placeholder="喝了什麼？" />
-          </div>
+          <div class="meal-inputs"><input type="time" id="teaTime" /><input type="text" id="teaFood" placeholder="喝了什麼？" /></div>
         </div>
         <div class="meal-row">
           <div class="meal-label"><span class="meal-emoji">🌙</span><span class="meal-name">晚餐</span></div>
-          <div class="meal-inputs">
-            <input type="time" id="dinnerTime" name="dinnerTime" />
-            <input type="text" id="dinnerFood" name="dinnerFood" placeholder="吃了什麼？" />
-          </div>
+          <div class="meal-inputs"><input type="time" id="dinnerTime" /><input type="text" id="dinnerFood" placeholder="吃了什麼？" /></div>
         </div>
         <div class="meal-row">
           <div class="meal-label"><span class="meal-emoji">🌛</span><div><span class="meal-name">宵夜</span><span class="optional-tag">選填</span></div></div>
-          <div class="meal-inputs">
-            <input type="time" id="lateNightTime" name="lateNightTime" />
-            <input type="text" id="lateNightFood" name="lateNightFood" placeholder="吃了什麼？" />
-          </div>
+          <div class="meal-inputs"><input type="time" id="lateNightTime" /><input type="text" id="lateNightFood" placeholder="吃了什麼？" /></div>
         </div>
       </div>
 
@@ -393,8 +218,7 @@
           <div><div class="card-title">水量累計</div><div class="card-subtitle">目標 2000ml</div></div>
         </div>
         <div class="water-display">
-          <span class="water-number" id="waterDisplay">0</span>
-          <span class="water-unit">ml</span>
+          <span class="water-number" id="waterDisplay">0</span><span class="water-unit">ml</span>
         </div>
         <div class="water-bar-bg"><div class="water-bar-fill" id="waterBar" style="width:0%"></div></div>
         <div class="water-goal-text" id="waterGoalText">0 / 2000 ml</div>
@@ -414,11 +238,11 @@
         </div>
         <div class="field-group">
           <label class="field-label" for="exercise">🏋️ 運動紀錄</label>
-          <input type="text" id="exercise" name="exercise" placeholder="例：走路 30 分鐘、親子跑跳 1 小時" />
+          <input type="text" id="exercise" placeholder="例：走路 30 分鐘、親子跑跳 1 小時" />
         </div>
         <div class="field-group">
           <label class="field-label" for="bedTime">🛌 預計睡覺時間</label>
-          <input type="time" id="bedTime" name="bedTime" />
+          <input type="time" id="bedTime" />
         </div>
       </div>
 
@@ -430,7 +254,7 @@
         </div>
         <div class="field-group">
           <label class="field-label" for="dailyNote">✍️ 心情短語</label>
-          <input type="text" id="dailyNote" name="dailyNote" placeholder="今天是怎樣的一天？" />
+          <input type="text" id="dailyNote" placeholder="今天是怎樣的一天？" />
         </div>
         <div class="mood-btns">
           <button class="btn-mood" data-mood="喜" onclick="selectMood(this)"><span class="emoji">😆</span><span class="mood-label">喜</span></button>
@@ -438,38 +262,28 @@
           <button class="btn-mood" data-mood="哀" onclick="selectMood(this)"><span class="emoji">😢</span><span class="mood-label">哀</span></button>
           <button class="btn-mood" data-mood="樂" onclick="selectMood(this)"><span class="emoji">🥰</span><span class="mood-label">樂</span></button>
         </div>
-        <input type="hidden" id="mood" name="mood" />
+        <input type="hidden" id="mood" />
       </div>
 
-      <!-- 送出按鈕 -->
+      <!-- 送出 -->
       <button class="submit-btn" id="submitBtn" onclick="submitForm()">
-        <div class="btn-content"><span id="btnText">✨ 送出今日日記</span></div>
+        <div class="btn-content"><span id="btnText">📥 儲存今日紀錄</span></div>
       </button>
 
-      <!-- ★ 錯誤框（送出失敗時顯示）-->
-      <div class="error-box" id="errorBox">
-        <strong>😵 送出遇到問題</strong>
-        <div class="error-detail" id="errorMsg"></div>
-        <div class="error-tips">
-          📋 確認清單：<br>
-          ① GAS 部署時「具有存取權」是否設為「<b>所有人</b>」<br>
-          ② 修改 code.gs 後是否有重新部署並選「新版本」<br>
-          ③ 資料已自動儲存，修正後可直接重新送出
-        </div>
-      </div>
+      <!-- 錯誤框 -->
+      <div class="error-box" id="errorBox"></div>
 
-      <p class="footer-note">每次輸入都會自動儲存，關掉網頁不怕資料消失 🌿</p>
-
+      <p class="footer-note">每次輸入都會自動儲存，不怕資料消失 🌿</p>
     </div>
   </main>
 
-  <!-- AI 回饋卡片 -->
-  <section id="feedback-section">
-    <div class="feedback-card">
-      <div class="feedback-badge">✨ 你的專屬能量回饋</div>
-      <div class="feedback-title">今日分析完成！</div>
-      <div class="feedback-body" id="feedbackText"></div>
-      <div class="feedback-divider"></div>
+  <!-- 成功畫面 -->
+  <section id="success-section">
+    <div class="success-card">
+      <span class="success-icon">✅</span>
+      <div class="success-title">今日紀錄已儲存！</div>
+      <div class="success-sub">資料已存入試算表<br>打開 Google Sheets 就能看到趨勢分析 📊</div>
+      <div class="success-divider"></div>
       <button class="new-day-btn" onclick="startNewDay()">🌅 開啟新的一天</button>
     </div>
   </section>
@@ -477,67 +291,37 @@
   <div class="toast" id="toast"></div>
 
   <script>
-    // ══════════════════════════════════════════
-    //  ⚙️ 設定
-    // ══════════════════════════════════════════
-    const GAS_URL    = 'https://script.google.com/macros/s/AKfycbwK4kCEOapgRwUC4e3n75NRZnzc1tWUsqsayIokSmEAnnVq5-1smaBA6NIvHUDbD7fH/exec';
+    const GAS_URL    = 'https://script.google.com/macros/s/AKfycbyCGcj6TLh0ZY75w4iWpSdJ-4vJuaSNgPf2NcHaFs1PyxJGJdZjZiAq9uMkfm2gAb4u/exec';
     const WATER_GOAL = 2000;
     const LS_KEY     = 'energy_diary_v1';
 
-    let waterAmount  = 0;
-    let selectedMood = '';
+    let waterAmount   = 0;
+    let selectedMood  = '';
     let autoSaveTimer = null;
 
-    // ══════════════════════════════════════════
-    //  🚀 初始化
-    // ══════════════════════════════════════════
     window.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('date').value = getTodayStr();
+      document.getElementById('date').value = new Date().toISOString().slice(0,10);
       restoreFromStorage();
-      document.querySelectorAll('input[type="text"], input[type="number"], input[type="date"], input[type="time"]')
+      document.querySelectorAll('input[type="text"],input[type="number"],input[type="date"],input[type="time"]')
         .forEach(el => el.addEventListener('input', triggerAutoSave));
     });
 
-    // ══════════════════════════════════════════
-    //  🛠 工具
-    // ══════════════════════════════════════════
-    function getTodayStr() {
-      return new Date().toISOString().slice(0, 10);
-    }
-
-    function showToast(msg, duration = 2500) {
+    function showToast(msg, ms = 2500) {
       const t = document.getElementById('toast');
-      t.textContent = msg;
-      t.classList.add('show');
-      setTimeout(() => t.classList.remove('show'), duration);
+      t.textContent = msg; t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), ms);
     }
 
-    // ══════════════════════════════════════════
-    //  💧 水量
-    // ══════════════════════════════════════════
-    function addWater(ml) {
-      waterAmount += ml;
-      updateWaterUI();
-      triggerAutoSave();
-    }
-
-    function resetWater() {
-      waterAmount = 0;
-      updateWaterUI();
-      triggerAutoSave();
-      showToast('水量已重置 💧');
-    }
-
+    /* 水量 */
+    function addWater(ml) { waterAmount += ml; updateWaterUI(); triggerAutoSave(); }
+    function resetWater()  { waterAmount = 0;  updateWaterUI(); triggerAutoSave(); showToast('水量已重置 💧'); }
     function updateWaterUI() {
       document.getElementById('waterDisplay').textContent = waterAmount;
-      const pct = Math.min((waterAmount / WATER_GOAL) * 100, 100);
-      document.getElementById('waterBar').style.width = pct + '%';
-      document.getElementById('waterGoalText').textContent = `${waterAmount} / ${WATER_GOAL} ml`;
+      document.getElementById('waterBar').style.width = Math.min((waterAmount/WATER_GOAL)*100,100) + '%';
+      document.getElementById('waterGoalText').textContent = waterAmount + ' / ' + WATER_GOAL + ' ml';
     }
 
-    // ══════════════════════════════════════════
-    //  😊 情緒
-    // ══════════════════════════════════════════
+    /* 情緒 */
     function selectMood(btn) {
       document.querySelectorAll('.btn-mood').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
@@ -546,17 +330,12 @@
       triggerAutoSave();
     }
 
-    // ══════════════════════════════════════════
-    //  💾 Local Storage
-    // ══════════════════════════════════════════
+    /* 自動儲存 */
     function triggerAutoSave() {
       const dot = document.getElementById('saveDot');
       dot.classList.add('saving');
       clearTimeout(autoSaveTimer);
-      autoSaveTimer = setTimeout(() => {
-        saveToStorage();
-        dot.classList.remove('saving');
-      }, 600);
+      autoSaveTimer = setTimeout(() => { saveToStorage(); dot.classList.remove('saving'); }, 600);
     }
 
     function buildFormData() {
@@ -592,153 +371,66 @@
       const raw = localStorage.getItem(LS_KEY);
       if (!raw) return;
       try {
-        const data = JSON.parse(raw);
+        const d = JSON.parse(raw);
         ['date','wakeTime','weight','bodyFat','visceralFat',
          'breakfastTime','breakfastFood','lunchTime','lunchFood',
          'teaTime','teaFood','dinnerTime','dinnerFood',
          'lateNightTime','lateNightFood','exercise','bedTime','dailyNote']
-          .forEach(id => {
-            const el = document.getElementById(id);
-            if (el && data[id] !== undefined) el.value = data[id];
-          });
-        if (data.waterAmount !== undefined) {
-          waterAmount = parseInt(data.waterAmount) || 0;
-          updateWaterUI();
-        }
-        if (data.mood) {
-          const moodBtn = document.querySelector(`.btn-mood[data-mood="${data.mood}"]`);
-          if (moodBtn) selectMood(moodBtn);
-        }
+          .forEach(id => { const el = document.getElementById(id); if (el && d[id] !== undefined) el.value = d[id]; });
+        if (d.waterAmount) { waterAmount = parseInt(d.waterAmount)||0; updateWaterUI(); }
+        if (d.mood) { const b = document.querySelector('.btn-mood[data-mood="'+d.mood+'"]'); if(b) selectMood(b); }
         showToast('✅ 上次的紀錄已還原');
-      } catch (e) {
-        console.warn('還原 Local Storage 失敗：', e);
-      }
+      } catch(e) {}
     }
 
-    // ══════════════════════════════════════════
-    //  📡 送出（修正版）
-    // ══════════════════════════════════════════
-  async function submitForm() {
-  const btn      = document.getElementById('submitBtn');
-  const btnText  = document.getElementById('btnText');
-  const errorBox = document.getElementById('errorBox');
-
-  errorBox.style.display = 'none';
-  btn.disabled = true;
-  btnText.innerHTML = '<div class="spinner"></div> 正在傳送...';
-
-  const payload = buildFormData();
-
-  try {
-    // ★ 改用 GET，資料放 URL 參數，完全避開 POST 重定向問題
-    const url = GAS_URL + '?data=' + encodeURIComponent(JSON.stringify(payload));
-
-    const res = await fetch(url, { method: 'GET' });
-
-    if (!res.ok) throw new Error(`伺服器回應 HTTP ${res.status}`);
-
-    let json;
-    try {
-      json = await res.json();
-    } catch (_) {
-      throw new Error('GAS 回傳格式非 JSON，請確認部署設定或等 1 分鐘後重試');
-    }
-
-    if (json.status === 'success') {
-      showFeedback(json.feedback);
-    } else {
-      throw new Error(json.message || '後端回傳未知錯誤');
-    }
-
-  } catch (err) {
-    document.getElementById('errorMsg').textContent = err.message;
-    errorBox.style.display = 'block';
-    errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    btn.disabled = false;
-    btnText.textContent = '↩ 重新送出';
-  }
-}
-    async function submitForm() {
+    /* 送出 — 純紀錄，無 AI，XHR */
+    function submitForm() {
       const btn      = document.getElementById('submitBtn');
       const btnText  = document.getElementById('btnText');
       const errorBox = document.getElementById('errorBox');
 
-      // 清除舊錯誤
       errorBox.style.display = 'none';
-
-      // 鎖定按鈕
       btn.disabled = true;
-      btnText.innerHTML = '<div class="spinner"></div> 正在傳送...';
+      btnText.innerHTML = '<div class="spinner"></div> 儲存中...';
 
-      const payload = buildFormData();
+      const url = GAS_URL + '?data=' + encodeURIComponent(JSON.stringify(buildFormData()));
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', url, true);
+      xhr.timeout = 30000;
 
-      try {
-        // ★ 關鍵修正：加上 redirect:'follow'
-        //   GAS Web App 的 POST 會先被 302 重定向，
-        //   不帶此參數時 fetch 跟不上重定向，導致網路錯誤。
-        const res = await fetch(GAS_URL, {
-          method:   'POST',
-          redirect: 'follow',
-          headers:  { 'Content-Type': 'text/plain;charset=utf-8' },
-          body:     JSON.stringify(payload)
-        });
-
-        if (!res.ok) {
-          throw new Error(`伺服器回應 HTTP ${res.status}，請確認 GAS 部署設定。`);
+      xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          try {
+            const json = JSON.parse(xhr.responseText);
+            if (json.status === 'success') {
+              showSuccess();
+              return;
+            }
+          } catch(_) {}
         }
-
-        // 嘗試解析 JSON，若失敗代表 GAS 回傳的是 HTML 錯誤頁
-        let json;
-        try {
-          json = await res.json();
-        } catch (_) {
-          throw new Error(
-            'GAS 回傳格式非 JSON。\n' +
-            '可能原因：① 部署後尚未生效（等 1 分鐘再試）② code.gs 有語法錯誤'
-          );
-        }
-
-        if (json.status === 'success') {
-          showFeedback(json.feedback);
-        } else {
-          throw new Error(json.message || '後端回傳未知錯誤，請查看 GAS 執行記錄。');
-        }
-
-      } catch (err) {
-        // 顯示錯誤框、恢復按鈕
-        document.getElementById('errorMsg').textContent = err.message;
-        errorBox.style.display = 'block';
-        errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        console.error('[能量日記] 送出失敗：', err);
-
-        btn.disabled = false;
-        btnText.textContent = '↩ 重新送出';
-      }
+        showError('儲存失敗（HTTP ' + xhr.status + '），請重試。');
+      };
+      xhr.onerror   = () => showError('網路連線失敗，請確認網路後重試。');
+      xhr.ontimeout = () => showError('連線逾時，請重試。');
+      xhr.send();
     }
 
-    // ══════════════════════════════════════════
-    //  🎉 顯示 AI 回饋
-    // ══════════════════════════════════════════
-    function showFeedback(text) {
+    function showSuccess() {
+      localStorage.removeItem(LS_KEY); // 送出成功才清除暫存
       document.getElementById('form-section').style.display = 'none';
-      const sec = document.getElementById('feedback-section');
-      sec.style.display = 'block';
-
-      const target = document.getElementById('feedbackText');
-      target.textContent = '';
-      let i = 0;
-      const chars = [...text];
-      const timer = setInterval(() => {
-        if (i < chars.length) { target.textContent += chars[i++]; }
-        else { clearInterval(timer); }
-      }, 18);
-
+      document.getElementById('success-section').style.display = 'block';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // ══════════════════════════════════════════
-    //  🌅 新的一天
-    // ══════════════════════════════════════════
+    function showError(msg) {
+      const btn = document.getElementById('submitBtn');
+      const errorBox = document.getElementById('errorBox');
+      errorBox.textContent = '😵 ' + msg;
+      errorBox.style.display = 'block';
+      btn.disabled = false;
+      document.getElementById('btnText').textContent = '↩ 重新送出';
+    }
+
     function startNewDay() {
       localStorage.removeItem(LS_KEY);
       location.reload();
