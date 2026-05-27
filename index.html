@@ -142,10 +142,11 @@
 
   <header class="site-header">
     <div class="header-logo">🌿</div>
-    <div class="header-text">
+    <div class="header-text" style="flex:1">
       <h1>我的能量日記</h1>
       <p>飲食・作息・身體覺察 <span class="autosave-dot" id="saveDot"></span></p>
     </div>
+    <button onclick="confirmNewDay()" style="flex-shrink:0;background:var(--bg-input);border:none;border-radius:10px;padding:8px 12px;font-family:var(--font-body);font-size:12px;font-weight:600;color:var(--text-mute);cursor:pointer;-webkit-tap-highlight-color:transparent;">🌅 新的一天</button>
   </header>
 
   <main id="form-section">
@@ -429,6 +430,12 @@
       errorBox.style.display = 'block';
       btn.disabled = false;
       document.getElementById('btnText').textContent = '↩ 重新送出';
+    }
+
+    function confirmNewDay() {
+      if (confirm('今天的紀錄還沒送出喔！\n確定要清空、開始新的一天嗎？')) {
+        startNewDay();
+      }
     }
 
     function startNewDay() {
